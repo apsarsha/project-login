@@ -1,17 +1,23 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import { LoginForm } from './components/auth/LoginForm';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+import RegirstationForm from "./Componenets/auth/RegirstationForm";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import LoginForm from './Componenets/auth/LoginForm'
+
 
 function App() {
   return (
-    <LocalizationProvider dateAdapter={AdapterMoment}>
-      <LoginForm />
-    </LocalizationProvider>
+    <div>
+       <RegirstationForm />
+          <LoginForm />
+      <BrowserRouter>
+      <Routes>
+         
+          <Route path="/" exact component={LoginForm} />
+          <Route path="/RegirstationForm" exact component={RegirstationForm} />
+      </Routes> 
+      </BrowserRouter>
+    </div>
   );
 }
 
